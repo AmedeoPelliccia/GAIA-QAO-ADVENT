@@ -1881,7 +1881,7 @@ graph TB
 
 | Facility Type | Quantum Capacity | Primary Applications | Global Locations |
 | :------------ | :--------------- | :------------------- | :--------------- |
-| **Central Hubs** | 100-qubit QPUs | Complex optimization, research | 5 (NA, EU, Asia, SA, Africa) |
+| **Central Hubs** | 100-qubit QPUs | Complex optimization, research | 7 (NA, EU×3, Asia, SA, Africa) |
 | **Regional Centers** | 50-qubit QPUs | Regional optimization, backup | 15 worldwide |
 | **Edge Nodes** | 20-qubit QPUs | Local processing, real-time | 50 facilities |
 | **Mobile Units** | 10-qubit QPUs | Aircraft, vessels, vehicles | 427 platforms |
@@ -2208,6 +2208,8 @@ graph TD
 | **Flight Test Center** | Mojave | Flight testing, envelope expansion | 3 aircraft |
 | **Maritime Test Basin** | Hamburg | Vessel testing, sea trials | 10 vessels |
 | **Environmental Lab** | Munich | DO-160G testing, qualification | 50 components/month |
+| **Quantum Technology Hub** ⚛️ | Naples | Nanotech, biotech, neutrino research, quantum propulsion | 450 personnel, €280M (Phase 1) |
+| **Earth Protection Center** 🛡️ | Bologna | Observation satellites, catastrophe prevention, deep space research, SSA | 350 personnel, €220M (Phase 1) |
 
 ---
 
@@ -16902,3 +16904,49 @@ This comprehensive catalogue details all 1,456 Hybrid Artifacts that form the te
 - **667 Software Hybrid Systems (DSW-HA)**: Software systems that require physical hardware interfaces for operation
 
 The catalogue demonstrates the GAIA-QAO-ADVENT program's commitment to seamless integration of quantum computing, artificial intelligence, and traditional aerospace engineering, creating a new paradigm for intelligent, adaptive, and autonomous aerospace systems.
+
+---
+
+## Anexo H — §4: Programas de datos cuánticos AMPEL-EVO
+
+### AM.PEL v2.0 — Quantum-Enhanced Aerospace Astrophysics Data Pipeline
+
+| Field | Value |
+|-------|-------|
+| **Document ID** | AMPEL-EVO-2026-04-05-PAPALAIKED-V2 |
+| **Evolved from** | PapaLaiked AM.PEL baseline (v1.x) |
+| **Program directory** | `programs/AMPEL-EVO/` |
+| **GAI-A Tree position** | L5 (Program) → L3a AMPEL + L3c GAIR-SPACE |
+| **AGGIX URI** | `aggix://gaia/ampel/ampel-evo/PRG/papalaiked-v2@2.0.0` |
+
+#### Key capabilities
+
+- Hybrid QML classifiers (PennyLane / TensorFlow Quantum) for transient classification — accuracy uplift 92% → 98.7%
+- VQE/QML kernels on 50+ logical qubits (simulated/emulated)
+- Native CCSDS satellite telemetry and SSA catalog integration
+- Post-quantum cryptography (Kyber-1024) provenance ledger and QKD inter-satellite link simulation
+- Hybrid edge (radiation-hardened) + HPC + cloud deployment (Kubernetes, Helm, ArgoCD)
+- DO-178C, ECSS-E-ST-40C, NIST SP 800-53, ISO 27001 compliance
+
+#### Hub alignment
+
+| Hub | Data streams |
+|-----|-------------|
+| **Naples** ⚛️ Quantum Technology Hub | QML/propulsion sensor streams |
+| **Bologna** 🛡️ Earth Protection Center | SSA/observation satellite pipelines |
+
+#### Roadmap
+
+- **Q3 2026**: Aerospace testbed deployment
+- **Q4 2026**: Open-source release (Apache 2.0)
+- **2027**: ESA Quantum Mission integration
+
+#### AMPEL-EVO family
+
+| ID | Name | Status |
+|----|------|--------|
+| AMPEL-EVO-001 | QML Transient Classifier | Development |
+| AMPEL-EVO-002 | VQE Materials Kernel | Development |
+| AMPEL-EVO-003 | CCSDS Telemetry Ingestor | Design |
+| AMPEL-EVO-004 | PQC Provenance Ledger | Design |
+| AMPEL-EVO-005 | QKD Link Simulator | Research |
