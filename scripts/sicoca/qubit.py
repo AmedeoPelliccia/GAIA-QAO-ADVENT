@@ -65,6 +65,9 @@ def measure(statevector: np.ndarray, shots: int = 1024,
             seed: int | None = None) -> dict[str, int]:
     """Sample measurement outcomes from a statevector.
 
+    Uses vectorized ``np.unique`` counting for efficient aggregation
+    of measurement samples (AI_OPTIMIZE).
+
     Parameters
     ----------
     statevector : np.ndarray
@@ -83,8 +86,7 @@ def measure(statevector: np.ndarray, shots: int = 1024,
     n_qubits = int(np.log2(len(statevector)))
     probs = probabilities(statevector)
     indices = rng.choice(len(probs), size=shots, p=probs)
-    counts: dict[str, int] = {}
-    for idx in indices:
-        label = format(idx, f"0{n_qubits}b")
-        counts[label] = counts.get(label, 0) + 1
-    return counts
+    # Vectorized counting via np.unique instead of Python loop
+    unique, freq = np.unique(indices, return_counts=True)
+    return {format(int(u), f"0{n_qubits}b"): int(c)
+            for u, c in zip(unique, freq)}

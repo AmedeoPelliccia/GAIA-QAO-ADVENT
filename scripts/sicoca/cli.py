@@ -121,6 +121,75 @@ def _demo_chain(sim: Simulator) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Interactive prompt
+# ---------------------------------------------------------------------------
+
+_PROMPT_HELP = """\
+Available commands:
+  h <q>            Apply Hadamard to qubit q
+  x <q>            Apply Pauli-X to qubit q
+  y <q>            Apply Pauli-Y to qubit q
+  z <q>            Apply Pauli-Z to qubit q
+  cx <c> <t>       Apply CNOT with control c, target t
+  draw             Show the circuit diagram
+  run [shots]      Simulate and show results (default 1024 shots)
+  restart          Clear the circuit
+  quit / exit      Exit the prompt
+  help             Show this help message
+"""
+
+
+def _interactive_prompt() -> None:
+    """Run an interactive circuit-building prompt."""
+    print(f"\n{_C.CYAN}── SICOCA Interactive Prompt ──{_C.END}")
+    n_str = input("Number of qubits (default 2): ").strip()
+    n_qubits = int(n_str) if n_str else 2
+    circ = Circuit(n_qubits, name="interactive")
+    print(f"Created {n_qubits}-qubit circuit.  Type 'help' for commands.\n")
+
+    while True:
+        try:
+            raw = input(f"{_C.BOLD}sicoca>{_C.END} ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print()
+            break
+        if not raw:
+            continue
+        parts = raw.split()
+        cmd = parts[0].lower()
+
+        try:
+            if cmd in ("quit", "exit"):
+                break
+            elif cmd == "help":
+                print(_PROMPT_HELP)
+            elif cmd == "draw":
+                print(circ.draw())
+            elif cmd == "restart":
+                circ.restart()
+                print("Circuit cleared.")
+            elif cmd == "run":
+                shots = int(parts[1]) if len(parts) > 1 else 1024
+                result = Simulator.launch(circ, shots=shots, seed=None)
+                print(f"  Statevector: {np.round(result.statevector, 4)}")
+                print(f"  Counts: {result.counts}")
+            elif cmd == "h" and len(parts) == 2:
+                circ.h(int(parts[1]))
+            elif cmd == "x" and len(parts) == 2:
+                circ.x(int(parts[1]))
+            elif cmd == "y" and len(parts) == 2:
+                circ.y(int(parts[1]))
+            elif cmd == "z" and len(parts) == 2:
+                circ.z(int(parts[1]))
+            elif cmd == "cx" and len(parts) == 3:
+                circ.cnot(int(parts[1]), int(parts[2]))
+            else:
+                print(f"Unknown command: {raw}.  Type 'help' for usage.")
+        except Exception as exc:
+            print(f"{_C.FAIL}Error: {exc}{_C.END}")
+
+
+# ---------------------------------------------------------------------------
 # Argument parsing
 # ---------------------------------------------------------------------------
 
@@ -137,6 +206,7 @@ def main(argv: list[str] | None = None) -> None:
                        help="Number of qubits (default: 3)")
     sub.add_parser("pauli", help="Pauli gate showcase")
     sub.add_parser("chain", help="Interlocking chain demo")
+    sub.add_parser("prompt", help="Interactive circuit-building prompt")
 
     args = parser.parse_args(argv)
     if not args.command:
@@ -159,6 +229,8 @@ def main(argv: list[str] | None = None) -> None:
         _demo_ghz(sim)
         _demo_pauli(sim)
         _demo_chain(sim)
+    elif args.command == "prompt":
+        _interactive_prompt()
 
 
 if __name__ == "__main__":

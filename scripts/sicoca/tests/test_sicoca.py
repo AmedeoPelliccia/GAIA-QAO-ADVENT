@@ -29,7 +29,9 @@ from sicoca import (
     Simulator, SimulationResult,
     Chain, ChainManager, Link, LinkStatus,
     always_proceed, majority_outcome, fidelity_threshold,
+    launch,
 )
+from sicoca.tests import make_dummy_result
 
 
 # =========================================================================
@@ -85,6 +87,16 @@ class TestGateDefinitions(unittest.TestCase):
     def test_get_gate_unknown_raises(self):
         with self.assertRaises(KeyError):
             get_gate("TOFFOLI")
+
+    def test_validate_passes_for_all_gates(self):
+        for gate in (H, X, Y, Z, I, CNOT):
+            self.assertTrue(gate.validate())
+
+    def test_validate_fails_for_non_unitary(self):
+        bad = Gate(name="bad", matrix=np.array([[1, 1], [0, 0]], dtype=complex),
+                   n_qubits=1)
+        with self.assertRaises(ValueError):
+            bad.validate()
 
 
 class TestGateBind(unittest.TestCase):
@@ -200,6 +212,19 @@ class TestCircuit(unittest.TestCase):
         self.assertIn("q0:", diagram)
         self.assertIn("q1:", diagram)
 
+    def test_restart_clears_operations(self):
+        c = Circuit(2).h(0).cnot(0, 1)
+        self.assertEqual(c.depth, 2)
+        c.restart()
+        self.assertEqual(c.depth, 0)
+        self.assertEqual(c.n_qubits, 2)
+        self.assertEqual(c.name, "circuit")
+
+    def test_restart_allows_rebuilding(self):
+        c = Circuit(2, name="reuse").h(0)
+        c.restart().x(0).x(1)
+        self.assertEqual(c.depth, 2)
+
 
 # =========================================================================
 # 4.  Simulator
@@ -287,6 +312,16 @@ class TestSimulator(unittest.TestCase):
         result = self.sim.run(c, initial_state=KET_1)
         np.testing.assert_array_almost_equal(result.statevector, KET_1)
 
+    def test_launch_convenience(self):
+        c = Circuit(1).x(0)
+        result = Simulator.launch(c, shots=100, seed=0)
+        np.testing.assert_array_almost_equal(result.statevector, KET_1)
+
+    def test_module_launch_shortcut(self):
+        c = Circuit(1).h(0)
+        result = launch(c, shots=100, seed=0)
+        self.assertIn("0", result.counts)
+
 
 # =========================================================================
 # 5.  Interlocking chains
@@ -294,23 +329,17 @@ class TestSimulator(unittest.TestCase):
 
 class TestInterlockPredicates(unittest.TestCase):
 
-    def _make_result(self, counts):
-        return SimulationResult(
-            circuit_name="test", n_qubits=2,
-            statevector=basis_state(2, 0), counts=counts,
-        )
-
     def test_always_proceed(self):
-        r = self._make_result({"00": 100})
+        r = make_dummy_result({"00": 100})
         self.assertTrue(always_proceed(r))
 
     def test_majority_outcome_pass(self):
         pred = majority_outcome("00")
-        self.assertTrue(pred(self._make_result({"00": 90, "11": 10})))
+        self.assertTrue(pred(make_dummy_result({"00": 90, "11": 10})))
 
     def test_majority_outcome_fail(self):
         pred = majority_outcome("00")
-        self.assertFalse(pred(self._make_result({"11": 90, "00": 10})))
+        self.assertFalse(pred(make_dummy_result({"11": 90, "00": 10})))
 
     def test_fidelity_threshold_pass(self):
         ref = basis_state(2, 0)
@@ -336,6 +365,28 @@ class TestChain(unittest.TestCase):
         chain = Chain(name="test")
         chain.add_link(Circuit(2).h(0)).add_link(Circuit(2).x(0))
         self.assertEqual(len(chain.links), 2)
+
+    def test_chain_concatenate(self):
+        a = Chain(name="a")
+        a.add_link(Circuit(1).h(0), label="H")
+        b = Chain(name="b")
+        b.add_link(Circuit(1).x(0), label="X")
+        merged = a.concatenate(b)
+        self.assertEqual(merged.name, "a+b")
+        self.assertEqual(len(merged.links), 2)
+        self.assertEqual(merged.links[0].label, "H")
+        self.assertEqual(merged.links[1].label, "X")
+
+    def test_chain_concatenate_custom_name(self):
+        a = Chain(name="a").add_link(Circuit(1).h(0))
+        b = Chain(name="b").add_link(Circuit(1).x(0))
+        merged = a.concatenate(b, name="custom")
+        self.assertEqual(merged.name, "custom")
+
+    def test_make_dummy_result(self):
+        r = make_dummy_result({"11": 50})
+        self.assertEqual(r.counts, {"11": 50})
+        self.assertEqual(r.n_qubits, 2)
 
 
 class TestChainManager(unittest.TestCase):

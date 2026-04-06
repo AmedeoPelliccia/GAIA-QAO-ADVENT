@@ -34,6 +34,28 @@ class Gate:
     def __repr__(self) -> str:
         return f"Gate({self.name}, qubits={self.target_qubits})"
 
+    def validate(self) -> bool:
+        """Check that this gate's matrix is unitary (U†U = I).
+
+        Returns
+        -------
+        bool
+            ``True`` if the matrix passes the unitarity check.
+
+        Raises
+        ------
+        ValueError
+            If the matrix is not unitary within numerical tolerance.
+        """
+        dim = self.matrix.shape[0]
+        product = self.matrix.conj().T @ self.matrix
+        if not np.allclose(product, np.eye(dim, dtype=complex)):
+            raise ValueError(
+                f"Gate '{self.name}' failed unitarity validation: "
+                f"U†U ≠ I"
+            )
+        return True
+
     def bind(self, *qubits: int) -> "Gate":
         """Return a copy of this gate bound to specific qubit indices."""
         if len(qubits) != self.n_qubits:

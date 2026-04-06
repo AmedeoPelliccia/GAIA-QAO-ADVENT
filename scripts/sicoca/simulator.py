@@ -101,6 +101,31 @@ class Simulator:
         )
 
     # ------------------------------------------------------------------
+    # Convenience launch
+    # ------------------------------------------------------------------
+
+    @classmethod
+    def launch(cls, circuit: Circuit, shots: int = 1024,
+               seed: int | None = None) -> SimulationResult:
+        """One-shot convenience: create a simulator, run a circuit, return
+        the result.
+
+        Parameters
+        ----------
+        circuit : Circuit
+            The circuit to simulate.
+        shots : int
+            Number of measurement samples.
+        seed : int or None
+            Random seed for reproducibility.
+
+        Returns
+        -------
+        SimulationResult
+        """
+        return cls(shots=shots, seed=seed).run(circuit)
+
+    # ------------------------------------------------------------------
     # Internal helpers
     # ------------------------------------------------------------------
 

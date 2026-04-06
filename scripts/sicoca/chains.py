@@ -127,6 +127,38 @@ class Chain:
                                label=label))
         return self
 
+    def concatenate(self, other: "Chain", name: str | None = None) -> "Chain":
+        """Return a new chain formed by appending *other*'s links after ours.
+
+        Parameters
+        ----------
+        other : Chain
+            The chain whose links are appended.
+        name : str or None
+            Name for the merged chain.  Defaults to
+            ``"<self.name>+<other.name>"``.
+
+        Returns
+        -------
+        Chain
+            A new chain containing copies of all links from both chains.
+        """
+        merged_name = name or f"{self.name}+{other.name}"
+        merged = Chain(name=merged_name)
+        for lnk in self.links:
+            merged.links.append(Link(
+                circuit=lnk.circuit,
+                interlock=lnk.interlock,
+                label=lnk.label,
+            ))
+        for lnk in other.links:
+            merged.links.append(Link(
+                circuit=lnk.circuit,
+                interlock=lnk.interlock,
+                label=lnk.label,
+            ))
+        return merged
+
     @property
     def is_executed(self) -> bool:
         return self._executed

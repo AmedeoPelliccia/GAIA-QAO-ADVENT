@@ -61,4 +61,15 @@ __all__ = [
     "Chain", "ChainManager", "Link", "LinkStatus",
     "InterlockPredicate", "always_proceed", "majority_outcome",
     "fidelity_threshold",
+    # convenience
+    "launch",
 ]
+
+
+def launch(circuit, shots: int = 1024, seed=None):
+    """Module-level shortcut: simulate a circuit in one call.
+
+    >>> from sicoca import Circuit, launch
+    >>> result = launch(Circuit(2).h(0).cnot(0, 1))
+    """
+    return Simulator.launch(circuit, shots=shots, seed=seed)

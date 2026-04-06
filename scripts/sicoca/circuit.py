@@ -97,6 +97,18 @@ class Circuit:
         """Return a deep copy of this circuit."""
         return deepcopy(self)
 
+    def restart(self) -> "Circuit":
+        """Clear all gate operations, resetting the circuit to its initial
+        empty state while preserving qubit count, name, and metadata.
+
+        Returns
+        -------
+        Circuit
+            ``self``, for fluent chaining.
+        """
+        self._operations.clear()
+        return self
+
     # -- visualisation ---------------------------------------------------------
 
     def draw(self) -> str:
