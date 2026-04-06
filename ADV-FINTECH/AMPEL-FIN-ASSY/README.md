@@ -408,7 +408,7 @@ compliance:
   aml_kyc: "Level 3 Enhanced Due Diligence"
   regulatory_frameworks: ["MiCA", "FATF", "Basel III", "EASA Part-M"]
   reporting_standards: ["IFRS", "GAAP", "S1000D"]
-  jurisdiction_support: ["EU", "US", "UK", "Japan", "Singapore"]
+  jurisdiction_support: ["EU", "US", "UK", "Japan", "Singapore", "Spain"]
 ```
 
 -----

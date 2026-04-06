@@ -2474,7 +2474,7 @@ The Living Artifacts (LA) catalogue represents the most advanced physical system
 
 ### G - GROUND DIVISION (Q-GROUND) - 50 Living Artifacts
 
-#### Quantum Data Center Infrastructure (15 LA)
+#### Quantum Data Center Infrastructure (16 LA)
 
 ```yaml
 GQOIS-001-QGRND-DHW-NOOSPHERA-00463:
@@ -2632,6 +2632,22 @@ GQOIS-001-QGRND-DHW-NOOSPHERA-00477:
   infrastructure_size: "4,500 m²"
   location: "Oslo, Norway"
   status: "CONSTRUCTION"
+
+GQOIS-001-QGRND-DHW-NOOSPHERA-00478:
+  name: "Quantum Data Center Hub QDC-BARCELONA-16"
+  type: "Living Artifact - Computing Infrastructure & Fintech Hub"
+  consciousness_level: 5
+  quantum_identity: "QI-ACTIVE-GROUNDED"
+  digital_twin_id: "DT-QDC-BARCELONA-16-ALICE-478"
+  infrastructure_size: "6,500 m²"
+  location: "Barcelona, Spain"
+  status: "OPERATIONAL"
+  capabilities:
+    - "Main Fintech & Blockchain operations hub"
+    - "Quantum-classical hybrid processing (BSC-CNS partnership)"
+    - "ADV stablecoin operations center"
+    - "EU regulatory sandbox coordination"
+    - "DeFi infrastructure and tokenized asset management"
 ```
 
 #### Advanced Manufacturing Cells (20 LA)
