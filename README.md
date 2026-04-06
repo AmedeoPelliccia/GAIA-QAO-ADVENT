@@ -167,31 +167,47 @@ This project has a strong foundation. The following are potential areas for futu
 - **Document ID**: GQOIS-001-QDATA-DDOC-IDMA-00001
 
 ## Table of Contents
-1.  [Executive Summary](#1-executive-summary)
-2.  [Framework Overview](#2-framework-overview)
-3.  [Organizational Structure](#3-organizational-structure)
-4.  [Technical Architecture](#4-technical-architecture)
-5.  [Deliverable Classification System](#5-deliverable-classification-system)
-6.  [Supply Chain & Assembly Architecture](#6-supply-chain--assembly-architecture)
-7.  [Quantum Systems Integration](#7-quantum-systems-integration)
-8.  [AI & Machine Learning Framework](#8-ai--machine-learning-framework)
-9.  [Implementation Roadmap](#9-implementation-roadmap)
-10. [Quality Assurance & Certification](#10-quality-assurance--certification)
-11. [Risk Management Framework](#11-risk-management-framework)
-12. [Performance Metrics & Analytics](#12-performance-metrics--analytics)
 
-**Annexes & Catalogues**
+<details open>
+<summary><strong>📑 Iter-Active Section Navigator</strong> — click to expand/collapse</summary>
+
+| # | Section | Jump |
+|---|---------|------|
+| 1 | [Executive Summary](#1-executive-summary) | ➡️ |
+| 2 | [Framework Overview](#2-framework-overview) | ➡️ |
+| 3 | [Organizational Structure](#3-organizational-structure) | ➡️ |
+| 4 | [Technical Architecture](#4-technical-architecture) | ➡️ |
+| 5 | [Deliverable Classification System](#5-deliverable-classification-system) | ➡️ |
+| 6 | [Supply Chain & Assembly Architecture](#6-supply-chain--assembly-architecture) | ➡️ |
+| 7 | [Quantum Systems Integration](#7-quantum-systems-integration) | ➡️ |
+| 8 | [AI & Machine Learning Framework](#8-ai--machine-learning-framework) | ➡️ |
+| 9 | [Implementation Roadmap](#9-implementation-roadmap) | ➡️ |
+| 10 | [Quality Assurance & Certification](#10-quality-assurance--certification) | ➡️ |
+| 11 | [Risk Management Framework](#11-risk-management-framework) | ➡️ |
+| 12 | [Performance Metrics & Analytics](#12-performance-metrics--analytics) | ➡️ |
+
+</details>
+
+<details>
+<summary><strong>📎 Annexes & Catalogues</strong></summary>
+
 - [ANNEX A — Living Artifacts Catalogue](#annex-a--living-artifacts-complete-catalogue)
 - [ANNEX B — Hybrid Artifacts Catalogue](#annex-b--hybrid-artifacts-complete-catalogue)
 - [ANNEX C — Pure Digital Assets Catalogue](#annex-c-pure-digital-assets-pda-catalogue)
 - [Anexo H §4 — AMPEL-EVO Quantum Data Programs](#anexo-h--4-programas-de-datos-cuánticos-ampel-evo)
 
-**Related Specifications**
+</details>
+
+<details>
+<summary><strong>🔗 Related Specifications</strong></summary>
+
 - [GAI-A Tree Specification](GAIA-TREE-SPEC.md) — Architecture hierarchy & governance rules
 - [Programs Index](programs/readme.md) — ALICE–BOB traceability matrix
 - [AMPEL-EVO v2.0 Specification](programs/AMPEL-EVO/AMPEL-EVO-2026-04-05-PAPALAIKED-V2.md) — Quantum data pipeline
 - [SICOCA Framework](scripts/sicoca/README.md) — Quantum circuit simulation library
 - [ADV-FINTECH](ADV-FINTECH/AMPEL-FIN-ASSY/README.md) — Fintech compliance assembly
+
+</details>
 
 ## 1. Executive Summary
 The GAIA-QAO-ADVENT framework represents a comprehensive approach to quantum-enhanced aerospace development, designed to revolutionize the aviation industry through the integration of quantum computing, artificial intelligence, and sustainable technologies. This document serves as the master reference for understanding the framework's architecture, deliverables, and implementation strategy.
@@ -1330,6 +1346,8 @@ The framework consists of three interconnected pillars:
 
 The program encompasses 2,847 distinct deliverables distributed across 12 specialized divisions. These deliverables range from fundamental quantum algorithms to complete aircraft platforms, each designed to contribute to the overall ecosystem of quantum-enhanced aerospace operations.
 
+
+[⬆️ Back to TOC](#table-of-contents) · [➡️ §2 Framework Overview](#2-framework-overview)
 ---
 
 ## 2. Framework Overview
@@ -1360,6 +1378,8 @@ The framework operates on several key technical principles:
 
 4.  **Digital Twin Synchronization**: Every physical system maintains a synchronized digital representation, enabling predictive maintenance, performance optimization, and virtual testing.
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §1 Executive Summary](#1-executive-summary) · [➡️ §3 Organizational Structure](#3-organizational-structure)
 ---
 
 ## 3. Organizational Structure
@@ -1478,6 +1498,8 @@ Six specialized AI agents manage different aspects of the program:
 | **Infrastructure & Data Management AI (IDMA)** | Infrastructure | 356 | Data centers, ground systems |
 | **Manufacturing & Quality Control AI (MQCA)** | Manufacturing | 138 | Production, quality control |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §2 Framework Overview](#2-framework-overview) · [➡️ §4 Technical Architecture](#4-technical-architecture)
 ---
 
 ## 4. Technical Architecture
@@ -1546,6 +1568,8 @@ The framework implements multiple communication protocols optimized for differen
 -   Classical error correction for quantum channels
 -   Adaptive protocol selection based on requirements
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §3 Organizational Structure](#3-organizational-structure) · [➡️ §5 Deliverable Classification System](#5-deliverable-classification-system)
 ---
 
 ## 5. Deliverable Classification System
@@ -1666,6 +1690,8 @@ GQOIS-001-QDATA-DDOC-IDMA-00001:
   Status: "Published"
 ```
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §4 Technical Architecture](#4-technical-architecture) · [➡️ §6 Supply Chain & Assembly Architecture](#6-supply-chain--assembly-architecture)
 ---
 
 ## 6. Supply Chain & Assembly Architecture
@@ -1854,6 +1880,8 @@ Quality verification occurs at each transition point in the supply chain:
 | **Major Assembly** | 100% | System, structural, certification | <0.2% | Quantum synchronization |
 | **Final Product** | 100% | Complete vehicle, flight test, customer | 0% | Full consciousness verification |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §5 Deliverable Classification System](#5-deliverable-classification-system) · [➡️ §7 Quantum Systems Integration](#7-quantum-systems-integration)
 ---
 
 ## 7. Quantum Systems Integration
@@ -1992,6 +2020,8 @@ flowchart TD
 | **Error Mitigation** | All systems | <5% performance | 95% improvement |
 | **Classical Verification** | Hybrid systems | Negligible | 99.99% reliability |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §6 Supply Chain & Assembly Architecture](#6-supply-chain--assembly-architecture) · [➡️ §8 AI & Machine Learning Framework](#8-ai--machine-learning-framework)
 ---
 
 ## 8. AI & Machine Learning Framework
@@ -2076,6 +2106,8 @@ graph LR
     style D fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
 ```
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §7 Quantum Systems Integration](#7-quantum-systems-integration) · [➡️ §9 Implementation Roadmap](#9-implementation-roadmap)
 ---
 
 ## 9. Implementation Roadmap
@@ -2164,6 +2196,8 @@ gantt
 | **Maritime Platforms** | Q1 2034 | Coast guards (5) | 6 vessels/year |
 | **Infrastructure Services** | Q2 2034 | Airport operators | 10 facilities/year |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §8 AI & Machine Learning Framework](#8-ai--machine-learning-framework) · [➡️ §10 Quality Assurance & Certification](#10-quality-assurance--certification)
 ---
 
 ## 10. Quality Assurance & Certification
@@ -2235,6 +2269,8 @@ graph TD
 | **Quantum Technology Hub** ⚛️ | Naples | Nanotech, biotech, neutrino research, quantum propulsion | 450 personnel, €280M (Phase 1) |
 | **Earth Protection Center** 🛡️ | Bologna | Observation satellites, catastrophe prevention, deep space research, SSA | 350 personnel, €220M (Phase 1) |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §9 Implementation Roadmap](#9-implementation-roadmap) · [➡️ §11 Risk Management Framework](#11-risk-management-framework)
 ---
 
 ## 11. Risk Management Framework
@@ -2328,6 +2364,8 @@ Risk_Monitoring_Metrics = {
 }
 ```
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §10 Quality Assurance & Certification](#10-quality-assurance--certification) · [➡️ §12 Performance Metrics & Analytics](#12-performance-metrics--analytics)
 ---
 
 ## 12. Performance Metrics & Analytics
@@ -2459,6 +2497,8 @@ graph LR
     style F fill:#e0f2f1,stroke:#00796b,stroke-width:2px
 ```
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §11 Risk Management Framework](#11-risk-management-framework)
 ---
 
 ## Conclusion
@@ -2469,6 +2509,8 @@ The distinction between in-line assembleable deliverables and final products ena
 
 This living document will continue to evolve as the program advances, incorporating lessons learned, technological breakthroughs, and regulatory developments. The success of GAIA-QAO-ADVENT will be measured not only in technical achievements but in its contribution to a more sustainable, efficient, and intelligent future for aerospace transportation.
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §12 Performance Metrics & Analytics](#12-performance-metrics--analytics)
 ---
 
 **End of Document**
