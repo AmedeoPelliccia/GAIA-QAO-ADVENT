@@ -95,7 +95,7 @@ deployment:
     
   cloud_tier:
     platform: "Kubernetes (Helm + ArgoCD)"
-    location: "GAIA Grid — Madrid / Barcelona QDC"
+    location: "GAIA Grid — Amsterdam / Barcelona QDC"
     role: "API gateway, dashboards, PQC ledger, federation"
 ```
 
@@ -246,7 +246,7 @@ Source (Git) → Lint + Unit Tests → Integration Tests
 |-----|-----------|---------|
 | Naples ⚛️ | QML Engine, VQE Kernel | BSC-CNS peering, 100G |
 | Bologna 🛡️ | CCSDS Ingestor, SSA Catalog, QKD Sim | ESA ESRIN link, 40G |
-| Madrid QDC | PQC Ledger, API Gateway | GAIA Grid backbone |
+| Amsterdam QDC | PQC Ledger, API Gateway | GAIA Grid backbone |
 | Barcelona QDC | Dashboard, Federation | ADV Fintech integration |
 
 ---

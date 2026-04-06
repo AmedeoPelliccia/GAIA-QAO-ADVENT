@@ -2059,7 +2059,7 @@ class HybridQuantumNeuralNetwork:
 ```mermaid
 graph LR
     subgraph "Training Infrastructure"
-        A[Primary Training Cluster<br/>10,000 GPUs<br/>Madrid Data Center]
+        A[Primary Training Cluster<br/>10,000 GPUs<br/>Amsterdam Data Center]
         B[Quantum-Classical Hybrid<br/>100 QPUs + 5,000 GPUs<br/>Global Distribution]
         C[Edge Training Nodes<br/>500 GPUs each<br/>20 Regional Centers]
         D[Simulation Environments<br/>50 PB Storage<br/>Cloud Distributed]
@@ -2227,7 +2227,7 @@ graph TD
 
 | Facility | Location | Capabilities | Capacity |
 | :------- | :------- | :----------- | :------- |
-| **Quantum Test Lab** | Madrid | QPU testing, algorithm validation | 100 experiments/day |
+| **Quantum Test Lab** | Amsterdam | QPU testing, algorithm validation | 100 experiments/day |
 | **Integration Center** | Toulouse | System integration, HIL testing | 5 major assemblies |
 | **Flight Test Center** | Mojave | Flight testing, envelope expansion | 3 aircraft |
 | **Maritime Test Basin** | Hamburg | Vessel testing, sea trials | 10 vessels |
@@ -2504,14 +2504,14 @@ The Living Artifacts (LA) catalogue represents the most advanced physical system
 
 ```yaml
 GQOIS-001-QGRND-DHW-NOOSPHERA-00463:
-  name: "Quantum Data Center Hub QDC-MADRID-01"
+  name: "Quantum Data Center Hub QDC-AMSTERDAM-01"
   type: "Living Artifact - Computing Infrastructure"
   consciousness_level: 5
   quantum_identity: "QI-ACTIVE-GROUNDED"
-  digital_twin_id: "DT-QDC-MADRID-01-ALICE-463"
+  digital_twin_id: "DT-QDC-AMSTERDAM-01-ALICE-463"
   mass: "N/A (Building infrastructure)"
   infrastructure_size: "5,000 m²"
-  location: "Madrid, Spain"
+  location: "Amsterdam, Netherlands"
   status: "OPERATIONAL"
   capabilities:
     - "100-qubit QPU hosting"
