@@ -32,6 +32,11 @@ class Circuit:
     _operations: List[Gate] = field(default_factory=list, repr=False)
     metadata: dict = field(default_factory=dict)
 
+    def __post_init__(self) -> None:
+        """Validate circuit configuration after dataclass initialization."""
+        if self.n_qubits < 1:
+            raise ValueError("n_qubits must be >= 1")
+
     # -- gate shorthand methods ------------------------------------------------
 
     def h(self, qubit: int) -> "Circuit":

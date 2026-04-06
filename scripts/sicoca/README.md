@@ -1,3 +1,15 @@
+---
+title: "SICOCA — System Interlocking Chains Operating in Circuits Algorithms"
+description: "Pure-Python quantum circuit framework with H, CNOT, Pauli gates and interlocking chains"
+version: "1.0.0"
+python_requires: ">=3.9"
+dependencies: [numpy]
+layer: L2
+aggix_uri: "aggix://gaia/aggix/core/ASM/sicoca@1.0.0"
+author: GAIA-QAO
+tags: [SICOCA, quantum, circuits, simulation, chains]
+---
+
 # SICOCA – System Interlocking Chains Operating in Circuits Algorithms
 
 > **Version 1.0.0** · Part of the [GAIA-QAO-ADVENT](../../README.md) quantum-aerospace framework
@@ -140,7 +152,7 @@ Custom predicates can be any callable with signature
 
 ## Dependencies
 
-- **Python ≥ 3.10**
+- **Python ≥ 3.9**
 - **NumPy** (only external dependency)
 
 No external quantum computing frameworks (Qiskit, Cirq, etc.) are required.

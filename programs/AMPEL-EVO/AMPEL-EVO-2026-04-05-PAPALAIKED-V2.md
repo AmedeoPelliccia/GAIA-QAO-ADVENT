@@ -1,3 +1,20 @@
+---
+title: "AM.PEL v2.0 — Quantum-Enhanced Aerospace Astrophysics Data Pipeline"
+description: "Full 8-section production-ready specification for the AMPEL-EVO quantum data pipeline"
+version: "2.0.0"
+date: 2026-04-05
+document_id: AMPEL-EVO-2026-04-05-PAPALAIKED-V2
+classification: "GAIA-QAO Internal — Pre-release"
+evolved_from: "PapaLaiked AM.PEL baseline (v1.x)"
+aggix_uri: "aggix://gaia/ampel/ampel-evo/PRG/papalaiked-v2@2.0.0"
+layer: L5
+branch: [AMPEL, GAIR-SPACE]
+compliance: [DO-178C, ECSS-E-ST-40C, NIST-SP-800-53, ISO-27001]
+hubs: [Naples, Bologna]
+author: GAIA-QAO
+tags: [AMPEL-EVO, QML, VQE, CCSDS, telemetry, PQC, QKD, aerospace, astrophysics]
+---
+
 # AMPEL-EVO-2026-04-05-PAPALAIKED-V2
 
 ## AM.PEL v2.0 — Quantum-Enhanced Aerospace Astrophysics Data Pipeline

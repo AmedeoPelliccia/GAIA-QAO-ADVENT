@@ -1,3 +1,13 @@
+---
+title: "Programs Index"
+description: "Master ALICE–BOB traceability matrix for all GAIA-QAO-ADVENT programs"
+version: "1.0.0"
+date: 2026-04-05
+layer: L5
+author: GAIA-QAO
+tags: [programs, ALICE, BOB, traceability, quantum-data]
+---
+
 # Programs Index
 
 > Master ALICE–BOB traceability matrix for all GAIA-QAO-ADVENT programs.

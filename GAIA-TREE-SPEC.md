@@ -1,3 +1,15 @@
+---
+title: "GAI-A Tree Specification"
+version: "1.0.0"
+status: LOCKED
+date: 2026-04-05
+document_id: GAIA-TREE-SPEC-001
+aggix_uri: "aggix://gaia/aggix/core/SPC/tree-spec@1.0.0"
+layer: L0
+author: GAIA-QAO
+tags: [architecture, governance, tree-rules, standards, AGGIX]
+---
+
 # GAI-A Tree Specification v1.0
 
 **Status: LOCKED** — Definitions, layer assignments, and tree rules are final.

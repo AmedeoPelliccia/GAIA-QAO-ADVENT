@@ -8,7 +8,7 @@ statevectors used by the SICOCA simulator.
 from __future__ import annotations
 
 from functools import reduce
-from typing import Sequence
+from typing import Optional, Sequence
 
 import numpy as np
 
@@ -62,7 +62,7 @@ def probabilities(statevector: np.ndarray) -> np.ndarray:
 
 
 def measure(statevector: np.ndarray, shots: int = 1024,
-            seed: int | None = None) -> dict[str, int]:
+            seed: Optional[int] = None) -> dict:
     """Sample measurement outcomes from a statevector.
 
     Uses vectorized ``np.unique`` counting for efficient aggregation
@@ -71,7 +71,7 @@ def measure(statevector: np.ndarray, shots: int = 1024,
     Parameters
     ----------
     statevector : np.ndarray
-        Normalized statevector.
+        Normalized statevector.  Length must be a power of two.
     shots : int
         Number of measurement samples.
     seed : int or None
@@ -83,7 +83,12 @@ def measure(statevector: np.ndarray, shots: int = 1024,
         Mapping from bitstring label (e.g. ``"00"``, ``"11"``) to count.
     """
     rng = np.random.default_rng(seed)
-    n_qubits = int(np.log2(len(statevector)))
+    dim = len(statevector)
+    if dim == 0 or (dim & (dim - 1)) != 0:
+        raise ValueError(
+            f"Statevector length {dim} is not a power of two"
+        )
+    n_qubits = int(np.log2(dim))
     probs = probabilities(statevector)
     indices = rng.choice(len(probs), size=shots, p=probs)
     # Vectorized counting via np.unique instead of Python loop

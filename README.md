@@ -1,3 +1,14 @@
+---
+title: "GAIA-QAO-ADVENT"
+description: "Quantum-Enhanced Aerospace Development Framework — Comprehensive Technical Documentation"
+version: "3.0.0"
+date: 2026-04-05
+document_id: GQOIS-001-QDATA-DDOC-IDMA-00001
+classification: "GAIA-QAO Proprietary"
+author: "Amedeo Pelliccia"
+tags: [quantum, aerospace, AI, digital-twin, AMPEL, SICOCA, AGGIX]
+---
+
 # APE Studio: AIded Prompt Engineering
 
 [APE STUDIO](https://ape-studio-aided-prompt-engineering-779891248177.us-west1.run.app/)
@@ -156,18 +167,31 @@ This project has a strong foundation. The following are potential areas for futu
 - **Document ID**: GQOIS-001-QDATA-DDOC-IDMA-00001
 
 ## Table of Contents
-1.  Executive Summary
-2.  Framework Overview
-3.  Organizational Structure
-4.  Technical Architecture
-5.  Deliverable Classification System
-6.  Supply Chain & Assembly Architecture
-7.  Quantum Systems Integration
-8.  AI & Machine Learning Framework
-9.  Implementation Roadmap
-10. Quality Assurance & Certification
-11. Risk Management Framework
-12. Performance Metrics & Analytics
+1.  [Executive Summary](#1-executive-summary)
+2.  [Framework Overview](#2-framework-overview)
+3.  [Organizational Structure](#3-organizational-structure)
+4.  [Technical Architecture](#4-technical-architecture)
+5.  [Deliverable Classification System](#5-deliverable-classification-system)
+6.  [Supply Chain & Assembly Architecture](#6-supply-chain--assembly-architecture)
+7.  [Quantum Systems Integration](#7-quantum-systems-integration)
+8.  [AI & Machine Learning Framework](#8-ai--machine-learning-framework)
+9.  [Implementation Roadmap](#9-implementation-roadmap)
+10. [Quality Assurance & Certification](#10-quality-assurance--certification)
+11. [Risk Management Framework](#11-risk-management-framework)
+12. [Performance Metrics & Analytics](#12-performance-metrics--analytics)
+
+**Annexes & Catalogues**
+- [ANNEX A — Living Artifacts Catalogue](#annex-a--living-artifacts-complete-catalogue)
+- [ANNEX B — Hybrid Artifacts Catalogue](#annex-b--hybrid-artifacts-complete-catalogue)
+- [ANNEX C — Pure Digital Assets Catalogue](#annex-c-pure-digital-assets-pda-catalogue)
+- [Anexo H §4 — AMPEL-EVO Quantum Data Programs](#anexo-h--4-programas-de-datos-cuánticos-ampel-evo)
+
+**Related Specifications**
+- [GAI-A Tree Specification](GAIA-TREE-SPEC.md) — Architecture hierarchy & governance rules
+- [Programs Index](programs/readme.md) — ALICE–BOB traceability matrix
+- [AMPEL-EVO v2.0 Specification](programs/AMPEL-EVO/AMPEL-EVO-2026-04-05-PAPALAIKED-V2.md) — Quantum data pipeline
+- [SICOCA Framework](scripts/sicoca/README.md) — Quantum circuit simulation library
+- [ADV-FINTECH](ADV-FINTECH/AMPEL-FIN-ASSY/README.md) — Fintech compliance assembly
 
 ## 1. Executive Summary
 The GAIA-QAO-ADVENT framework represents a comprehensive approach to quantum-enhanced aerospace development, designed to revolutionize the aviation industry through the integration of quantum computing, artificial intelligence, and sustainable technologies. This document serves as the master reference for understanding the framework's architecture, deliverables, and implementation strategy.

@@ -1,3 +1,16 @@
+---
+title: "AM.PEL v2.0 — AMPEL-EVO Program Index"
+description: "Quantum-Enhanced Aerospace Astrophysics Data Pipeline — program index with ALICE–BOB traceability"
+version: "2.0.0"
+date: 2026-04-05
+document_id: AMPEL-EVO-2026-04-05-PAPALAIKED-V2
+aggix_uri: "aggix://gaia/ampel/ampel-evo/PRG/papalaiked-v2@2.0.0"
+layer: L5
+branch: [AMPEL, GAIR-SPACE]
+author: GAIA-QAO
+tags: [AMPEL-EVO, QML, VQE, CCSDS, PQC, QKD, Naples, Bologna]
+---
+
 # AM.PEL v2.0 — AMPEL-EVO Program Index
 
 > Quantum-Enhanced Aerospace Astrophysics Data Pipeline

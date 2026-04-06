@@ -53,7 +53,7 @@ class Simulator:
         Random seed for measurement sampling reproducibility.
     """
 
-    def __init__(self, shots: int = 1024, seed: int | None = None):
+    def __init__(self, shots: int = 1024, seed: Optional[int] = None):
         self.shots = shots
         self.seed = seed
 
@@ -62,8 +62,8 @@ class Simulator:
     # ------------------------------------------------------------------
 
     def run(self, circuit: Circuit,
-            initial_state: np.ndarray | None = None,
-            shots: int | None = None) -> SimulationResult:
+            initial_state: Optional[np.ndarray] = None,
+            shots: Optional[int] = None) -> SimulationResult:
         """Simulate a circuit and return the result.
 
         Parameters
@@ -80,11 +80,16 @@ class Simulator:
         SimulationResult
         """
         n = circuit.n_qubits
-        state = (
-            initial_state.copy()
-            if initial_state is not None
-            else basis_state(n, 0)
-        )
+        if initial_state is not None:
+            dim = 1 << n
+            if initial_state.shape != (dim,):
+                raise ValueError(
+                    f"initial_state length {initial_state.shape} does not "
+                    f"match expected dimension ({dim},) for {n} qubits"
+                )
+            state = initial_state.copy()
+        else:
+            state = basis_state(n, 0)
 
         for gate in circuit.operations:
             unitary = self._expand_gate(gate, n)
@@ -106,7 +111,7 @@ class Simulator:
 
     @classmethod
     def launch(cls, circuit: Circuit, shots: int = 1024,
-               seed: int | None = None) -> SimulationResult:
+               seed: Optional[int] = None) -> SimulationResult:
         """One-shot convenience: create a simulator, run a circuit, return
         the result.
 
@@ -162,44 +167,39 @@ class Simulator:
 
     @staticmethod
     def _expand_two_qubit(gate: Gate, n_qubits: int) -> np.ndarray:
-        """Expand a 2-qubit gate (e.g. CNOT) to the full space.
+        """Expand a generic 2-qubit gate to the full space.
 
-        Handles non-adjacent and reversed control/target ordering by
-        constructing the operator via projector decomposition:
-
-            CNOT_{c,t} = |0⟩⟨0|_c ⊗ I_t  +  |1⟩⟨1|_c ⊗ X_t
-
-        This generalises cleanly to arbitrary qubit positions.
+        The 4×4 ``gate.matrix`` is interpreted in the qubit order given by
+        ``gate.target_qubits``. This supports arbitrary 2-qubit unitaries,
+        including non-adjacent qubits and reversed qubit ordering.
         """
-        control, target = gate.target_qubits
+        q0, q1 = gate.target_qubits
+        gate_matrix = np.asarray(gate.matrix, dtype=complex)
+        if gate_matrix.shape != (4, 4):
+            raise ValueError(
+                f"2-qubit gate matrix must have shape (4, 4), "
+                f"got {gate_matrix.shape}"
+            )
+
         dim = 1 << n_qubits
+        full_matrix = np.zeros((dim, dim), dtype=complex)
 
-        # Projectors for the control qubit
-        p0 = np.array([[1, 0], [0, 0]], dtype=complex)  # |0><0|
-        p1 = np.array([[0, 0], [0, 1]], dtype=complex)  # |1><1|
+        for input_index in range(dim):
+            input_bits = [(input_index >> (n_qubits - 1 - i)) & 1
+                          for i in range(n_qubits)]
+            two_qubit_input = (input_bits[q0] << 1) | input_bits[q1]
 
-        # Action on target qubit when control is |1⟩
-        x_gate = np.array([[0, 1], [1, 0]], dtype=complex)
-        eye2 = np.eye(2, dtype=complex)
+            for two_qubit_output in range(4):
+                amplitude = gate_matrix[two_qubit_output, two_qubit_input]
+                if amplitude == 0:
+                    continue
 
-        # Build full-space terms
-        term0_parts = []
-        term1_parts = []
-        for i in range(n_qubits):
-            if i == control:
-                term0_parts.append(p0)
-                term1_parts.append(p1)
-            elif i == target:
-                term0_parts.append(eye2)
-                term1_parts.append(x_gate)
-            else:
-                term0_parts.append(eye2)
-                term1_parts.append(eye2)
+                output_bits = input_bits.copy()
+                output_bits[q0] = (two_qubit_output >> 1) & 1
+                output_bits[q1] = two_qubit_output & 1
+                output_index = 0
+                for bit in output_bits:
+                    output_index = (output_index << 1) | bit
+                full_matrix[output_index, input_index] += amplitude
 
-        def kron_list(mats):
-            result = mats[0]
-            for m in mats[1:]:
-                result = np.kron(result, m)
-            return result
-
-        return kron_list(term0_parts) + kron_list(term1_parts)
+        return full_matrix

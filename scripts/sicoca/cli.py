@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from typing import List, Optional
 
 import numpy as np
 
@@ -81,7 +82,12 @@ def _demo_pauli(sim: Simulator) -> None:
     print(f"\n{_C.CYAN}── Pauli Gate Showcase (X, Y, Z on |0⟩) ──{_C.END}")
     for gate_name in ("X", "Y", "Z"):
         circ = Circuit(1, name=f"Pauli-{gate_name}")
-        circ.add_gate(__import__("sicoca.gates", fromlist=[gate_name]).__dict__[gate_name], 0)
+        if gate_name == "X":
+            circ.x(0)
+        elif gate_name == "Y":
+            circ.y(0)
+        else:
+            circ.z(0)
         result = sim.run(circ)
         sv = np.round(result.statevector, 4)
         print(f"  {gate_name}|0⟩ = {sv}   counts={result.counts}")
@@ -193,7 +199,7 @@ def _interactive_prompt() -> None:
 # Argument parsing
 # ---------------------------------------------------------------------------
 
-def main(argv: list[str] | None = None) -> None:
+def main(argv: Optional[List[str]] = None) -> None:
     parser = argparse.ArgumentParser(
         prog="sicoca",
         description="SICOCA demonstration CLI",

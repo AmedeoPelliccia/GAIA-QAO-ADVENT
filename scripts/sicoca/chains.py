@@ -3,18 +3,18 @@ SICOCA Interlocking Chains
 ===========================
 System Interlocking Chains Operating in Circuits Algorithms
 
-An **interlocking chain** is a directed acyclic graph (DAG) of
-``Circuit`` nodes linked by dependency edges.  Each node's execution
-may depend on measurement outcomes of predecessor nodes, enabling
-classical feed-forward between quantum circuits.
+This module models an **interlocking chain** as a linear, ordered
+sequence of ``Circuit`` links. Each link's execution may depend on the
+outcome of the immediately preceding link, enabling simple classical
+feed-forward between quantum circuits.
 
 Key concepts
 ------------
 * **Link** – a single circuit together with an optional *interlock*
   predicate that must be satisfied before the circuit is executed.
 * **Chain** – an ordered sequence of links executed from head to tail.
-* **ChainManager** – orchestrates multiple named chains, checks for
-  cycles, and drives execution through the ``Simulator``.
+* **ChainManager** – orchestrates multiple named chains and drives
+  execution through the ``Simulator``.
 """
 
 from __future__ import annotations
@@ -127,8 +127,11 @@ class Chain:
                                label=label))
         return self
 
-    def concatenate(self, other: "Chain", name: str | None = None) -> "Chain":
+    def concatenate(self, other: "Chain", name: Optional[str] = None) -> "Chain":
         """Return a new chain formed by appending *other*'s links after ours.
+
+        Circuits are deep-copied so mutations to the source chains do not
+        affect the merged chain.
 
         Parameters
         ----------
@@ -141,19 +144,19 @@ class Chain:
         Returns
         -------
         Chain
-            A new chain containing copies of all links from both chains.
+            A new chain containing deep copies of all links from both chains.
         """
         merged_name = name or f"{self.name}+{other.name}"
         merged = Chain(name=merged_name)
         for lnk in self.links:
             merged.links.append(Link(
-                circuit=lnk.circuit,
+                circuit=lnk.circuit.copy(),
                 interlock=lnk.interlock,
                 label=lnk.label,
             ))
         for lnk in other.links:
             merged.links.append(Link(
-                circuit=lnk.circuit,
+                circuit=lnk.circuit.copy(),
                 interlock=lnk.interlock,
                 label=lnk.label,
             ))
@@ -182,7 +185,7 @@ class ChainManager:
         The simulator back-end.  A default one is created if omitted.
     """
 
-    def __init__(self, simulator: Simulator | None = None):
+    def __init__(self, simulator: Optional[Simulator] = None):
         self.simulator = simulator or Simulator()
         self._chains: Dict[str, Chain] = {}
 
