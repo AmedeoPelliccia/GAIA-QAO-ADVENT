@@ -1883,12 +1883,14 @@ monitoring_infrastructure:
 - **GAIA-QAO**: Object identification
 - **QUAChain**: Base blockchain
 - **IPFS**: Decentralized storage
+- **IDEALE E₂ Economy**: Governed industrial digital economy — CRM, ERP, TT (Teknia Token), Marketplace, DPP ([spec](../IDEALE-E2-ECONOMY/IDEALE-E2-ECON-001.md))
+- **BBCNs**: Barcelona Block Chain Networks — settlement infrastructure for TT and DPP lifecycle events ([spec](../IDEALE-E2-ECONOMY/IDEALE-E2-ECON-001.md#3-bbcns--barcelona-block-chain-networks-hub))
 
 -----
 
 ## 🏙️ Barcelona Fintech & Blockchain Hub
 
-Barcelona serves as the **primary European fintech and blockchain hub** for the AMPEL-FIN-ASSY ecosystem, leveraging the city's thriving technology ecosystem, strategic Mediterranean location, and world-class research institutions.
+Barcelona serves as the **primary European fintech and blockchain hub** for the AMPEL-FIN-ASSY ecosystem, leveraging the city's thriving technology ecosystem, strategic Mediterranean location, and world-class research institutions. Barcelona also hosts **BBCNs (Barcelona Block Chain Networks)**, the Proof-of-Authority settlement infrastructure for the [IDEALE E₂ Economy](../IDEALE-E2-ECONOMY/IDEALE-E2-ECON-001.md) — providing hash-chained ledger services, smart contract execution, Teknia Token (TT) settlement, and MiCA-compliant regulatory reporting.
 
 ### Hub Overview
 
