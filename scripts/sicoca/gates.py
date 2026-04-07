@@ -45,9 +45,15 @@ class Gate:
         Raises
         ------
         ValueError
-            If the matrix is not unitary within numerical tolerance.
+            If the matrix is not square or not unitary within numerical
+            tolerance.
         """
         dim = self.matrix.shape[0]
+        if self.matrix.shape != (dim, dim):
+            raise ValueError(
+                f"Gate '{self.name}' has a non-square matrix of shape "
+                f"{self.matrix.shape}; expected ({dim}, {dim})."
+            )
         product = self.matrix.conj().T @ self.matrix
         if not np.allclose(product, np.eye(dim, dtype=complex)):
             raise ValueError(
