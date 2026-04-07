@@ -1,3 +1,14 @@
+---
+title: "GAIA-QAO-ADVENT"
+description: "Quantum-Enhanced Aerospace Development Framework — Comprehensive Technical Documentation"
+version: "3.0.0"
+date: 2026-04-05
+document_id: GQOIS-001-QDATA-DDOC-IDMA-00001
+classification: "GAIA-QAO Proprietary"
+author: "Amedeo Pelliccia"
+tags: [quantum, aerospace, AI, digital-twin, AMPEL, SICOCA, AGGIX]
+---
+
 # APE Studio: AIded Prompt Engineering
 
 [APE STUDIO](https://ape-studio-aided-prompt-engineering-779891248177.us-west1.run.app/)
@@ -156,18 +167,47 @@ This project has a strong foundation. The following are potential areas for futu
 - **Document ID**: GQOIS-001-QDATA-DDOC-IDMA-00001
 
 ## Table of Contents
-1.  Executive Summary
-2.  Framework Overview
-3.  Organizational Structure
-4.  Technical Architecture
-5.  Deliverable Classification System
-6.  Supply Chain & Assembly Architecture
-7.  Quantum Systems Integration
-8.  AI & Machine Learning Framework
-9.  Implementation Roadmap
-10. Quality Assurance & Certification
-11. Risk Management Framework
-12. Performance Metrics & Analytics
+
+<details open>
+<summary><strong>📑 Iter-Active Section Navigator</strong> — click to expand/collapse</summary>
+
+| # | Section |
+|---|---------|
+| 1 | [Executive Summary](#1-executive-summary) |
+| 2 | [Framework Overview](#2-framework-overview) |
+| 3 | [Organizational Structure](#3-organizational-structure) |
+| 4 | [Technical Architecture](#4-technical-architecture) |
+| 5 | [Deliverable Classification System](#5-deliverable-classification-system) |
+| 6 | [Supply Chain & Assembly Architecture](#6-supply-chain--assembly-architecture) |
+| 7 | [Quantum Systems Integration](#7-quantum-systems-integration) |
+| 8 | [AI & Machine Learning Framework](#8-ai--machine-learning-framework) |
+| 9 | [Implementation Roadmap](#9-implementation-roadmap) |
+| 10 | [Quality Assurance & Certification](#10-quality-assurance--certification) |
+| 11 | [Risk Management Framework](#11-risk-management-framework) |
+| 12 | [Performance Metrics & Analytics](#12-performance-metrics--analytics) |
+
+</details>
+
+<details>
+<summary><strong>📎 Annexes & Catalogues</strong></summary>
+
+- [ANNEX A — Living Artifacts Catalogue](#annex-a--living-artifacts-complete-catalogue)
+- [ANNEX B — Hybrid Artifacts Catalogue](#annex-b--hybrid-artifacts-complete-catalogue)
+- [ANNEX C — Pure Digital Assets Catalogue](#annex-c-pure-digital-assets-pda-catalogue)
+- [Anexo H §4 — AMPEL-EVO Quantum Data Programs](#anexo-h--4-programas-de-datos-cuánticos-ampel-evo)
+
+</details>
+
+<details>
+<summary><strong>🔗 Related Specifications</strong></summary>
+
+- [GAI-A Tree Specification](GAIA-TREE-SPEC.md) — Architecture hierarchy & governance rules
+- [Programs Index](programs/readme.md) — ALICE–BOB traceability matrix
+- [AMPEL-EVO v2.0 Specification](programs/AMPEL-EVO/AMPEL-EVO-2026-04-05-PAPALAIKED-V2.md) — Quantum data pipeline
+- [SICOCA Framework](scripts/sicoca/README.md) — Quantum circuit simulation library
+- [ADV-FINTECH](ADV-FINTECH/AMPEL-FIN-ASSY/README.md) — Fintech compliance assembly
+
+</details>
 
 ## 1. Executive Summary
 The GAIA-QAO-ADVENT framework represents a comprehensive approach to quantum-enhanced aerospace development, designed to revolutionize the aviation industry through the integration of quantum computing, artificial intelligence, and sustainable technologies. This document serves as the master reference for understanding the framework's architecture, deliverables, and implementation strategy.
@@ -1306,6 +1346,8 @@ The framework consists of three interconnected pillars:
 
 The program encompasses 2,847 distinct deliverables distributed across 12 specialized divisions. These deliverables range from fundamental quantum algorithms to complete aircraft platforms, each designed to contribute to the overall ecosystem of quantum-enhanced aerospace operations.
 
+
+[⬆️ Back to TOC](#table-of-contents) · [➡️ §2 Framework Overview](#2-framework-overview)
 ---
 
 ## 2. Framework Overview
@@ -1336,6 +1378,8 @@ The framework operates on several key technical principles:
 
 4.  **Digital Twin Synchronization**: Every physical system maintains a synchronized digital representation, enabling predictive maintenance, performance optimization, and virtual testing.
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §1 Executive Summary](#1-executive-summary) · [➡️ §3 Organizational Structure](#3-organizational-structure)
 ---
 
 ## 3. Organizational Structure
@@ -1454,6 +1498,8 @@ Six specialized AI agents manage different aspects of the program:
 | **Infrastructure & Data Management AI (IDMA)** | Infrastructure | 356 | Data centers, ground systems |
 | **Manufacturing & Quality Control AI (MQCA)** | Manufacturing | 138 | Production, quality control |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §2 Framework Overview](#2-framework-overview) · [➡️ §4 Technical Architecture](#4-technical-architecture)
 ---
 
 ## 4. Technical Architecture
@@ -1522,6 +1568,8 @@ The framework implements multiple communication protocols optimized for differen
 -   Classical error correction for quantum channels
 -   Adaptive protocol selection based on requirements
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §3 Organizational Structure](#3-organizational-structure) · [➡️ §5 Deliverable Classification System](#5-deliverable-classification-system)
 ---
 
 ## 5. Deliverable Classification System
@@ -1642,6 +1690,8 @@ GQOIS-001-QDATA-DDOC-IDMA-00001:
   Status: "Published"
 ```
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §4 Technical Architecture](#4-technical-architecture) · [➡️ §6 Supply Chain & Assembly Architecture](#6-supply-chain--assembly-architecture)
 ---
 
 ## 6. Supply Chain & Assembly Architecture
@@ -1830,6 +1880,8 @@ Quality verification occurs at each transition point in the supply chain:
 | **Major Assembly** | 100% | System, structural, certification | <0.2% | Quantum synchronization |
 | **Final Product** | 100% | Complete vehicle, flight test, customer | 0% | Full consciousness verification |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §5 Deliverable Classification System](#5-deliverable-classification-system) · [➡️ §7 Quantum Systems Integration](#7-quantum-systems-integration)
 ---
 
 ## 7. Quantum Systems Integration
@@ -1881,7 +1933,7 @@ graph TB
 
 | Facility Type | Quantum Capacity | Primary Applications | Global Locations |
 | :------------ | :--------------- | :------------------- | :--------------- |
-| **Central Hubs** | 100-qubit QPUs | Complex optimization, research | 5 (NA, EU, Asia, SA, Africa) |
+| **Central Hubs** | 100-qubit QPUs | Complex optimization, research | 7 (NA, EU×3, Asia, SA, Africa) |
 | **Regional Centers** | 50-qubit QPUs | Regional optimization, backup | 15 worldwide |
 | **Edge Nodes** | 20-qubit QPUs | Local processing, real-time | 50 facilities |
 | **Mobile Units** | 10-qubit QPUs | Aircraft, vessels, vehicles | 427 platforms |
@@ -1968,6 +2020,8 @@ flowchart TD
 | **Error Mitigation** | All systems | <5% performance | 95% improvement |
 | **Classical Verification** | Hybrid systems | Negligible | 99.99% reliability |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §6 Supply Chain & Assembly Architecture](#6-supply-chain--assembly-architecture) · [➡️ §8 AI & Machine Learning Framework](#8-ai--machine-learning-framework)
 ---
 
 ## 8. AI & Machine Learning Framework
@@ -2035,7 +2089,7 @@ class HybridQuantumNeuralNetwork:
 ```mermaid
 graph LR
     subgraph "Training Infrastructure"
-        A[Primary Training Cluster<br/>10,000 GPUs<br/>Madrid Data Center]
+        A[Primary Training Cluster<br/>10,000 GPUs<br/>Amsterdam Data Center]
         B[Quantum-Classical Hybrid<br/>100 QPUs + 5,000 GPUs<br/>Global Distribution]
         C[Edge Training Nodes<br/>500 GPUs each<br/>20 Regional Centers]
         D[Simulation Environments<br/>50 PB Storage<br/>Cloud Distributed]
@@ -2052,6 +2106,8 @@ graph LR
     style D fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
 ```
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §7 Quantum Systems Integration](#7-quantum-systems-integration) · [➡️ §9 Implementation Roadmap](#9-implementation-roadmap)
 ---
 
 ## 9. Implementation Roadmap
@@ -2140,6 +2196,8 @@ gantt
 | **Maritime Platforms** | Q1 2034 | Coast guards (5) | 6 vessels/year |
 | **Infrastructure Services** | Q2 2034 | Airport operators | 10 facilities/year |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §8 AI & Machine Learning Framework](#8-ai--machine-learning-framework) · [➡️ §10 Quality Assurance & Certification](#10-quality-assurance--certification)
 ---
 
 ## 10. Quality Assurance & Certification
@@ -2203,12 +2261,16 @@ graph TD
 
 | Facility | Location | Capabilities | Capacity |
 | :------- | :------- | :----------- | :------- |
-| **Quantum Test Lab** | Madrid | QPU testing, algorithm validation | 100 experiments/day |
+| **Quantum Test Lab** | Amsterdam | QPU testing, algorithm validation | 100 experiments/day |
 | **Integration Center** | Toulouse | System integration, HIL testing | 5 major assemblies |
 | **Flight Test Center** | Mojave | Flight testing, envelope expansion | 3 aircraft |
 | **Maritime Test Basin** | Hamburg | Vessel testing, sea trials | 10 vessels |
 | **Environmental Lab** | Munich | DO-160G testing, qualification | 50 components/month |
+| **Quantum Technology Hub** ⚛️ | Naples | Nanotech, biotech, neutrino research, quantum propulsion | 450 personnel, €280M (Phase 1) |
+| **Earth Protection Center** 🛡️ | Bologna | Observation satellites, catastrophe prevention, deep space research, SSA | 350 personnel, €220M (Phase 1) |
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §9 Implementation Roadmap](#9-implementation-roadmap) · [➡️ §11 Risk Management Framework](#11-risk-management-framework)
 ---
 
 ## 11. Risk Management Framework
@@ -2302,6 +2364,8 @@ Risk_Monitoring_Metrics = {
 }
 ```
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §10 Quality Assurance & Certification](#10-quality-assurance--certification) · [➡️ §12 Performance Metrics & Analytics](#12-performance-metrics--analytics)
 ---
 
 ## 12. Performance Metrics & Analytics
@@ -2433,6 +2497,8 @@ graph LR
     style F fill:#e0f2f1,stroke:#00796b,stroke-width:2px
 ```
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §11 Risk Management Framework](#11-risk-management-framework)
 ---
 
 ## Conclusion
@@ -2443,6 +2509,8 @@ The distinction between in-line assembleable deliverables and final products ena
 
 This living document will continue to evolve as the program advances, incorporating lessons learned, technological breakthroughs, and regulatory developments. The success of GAIA-QAO-ADVENT will be measured not only in technical achievements but in its contribution to a more sustainable, efficient, and intelligent future for aerospace transportation.
 
+
+[⬆️ Back to TOC](#table-of-contents) · [⬅️ §12 Performance Metrics & Analytics](#12-performance-metrics--analytics)
 ---
 
 **End of Document**
@@ -2474,18 +2542,18 @@ The Living Artifacts (LA) catalogue represents the most advanced physical system
 
 ### G - GROUND DIVISION (Q-GROUND) - 50 Living Artifacts
 
-#### Quantum Data Center Infrastructure (15 LA)
+#### Quantum Data Center Infrastructure (16 LA)
 
 ```yaml
 GQOIS-001-QGRND-DHW-NOOSPHERA-00463:
-  name: "Quantum Data Center Hub QDC-MADRID-01"
+  name: "Quantum Data Center Hub QDC-AMSTERDAM-01"
   type: "Living Artifact - Computing Infrastructure"
   consciousness_level: 5
   quantum_identity: "QI-ACTIVE-GROUNDED"
-  digital_twin_id: "DT-QDC-MADRID-01-ALICE-463"
+  digital_twin_id: "DT-QDC-AMSTERDAM-01-ALICE-463"
   mass: "N/A (Building infrastructure)"
   infrastructure_size: "5,000 m²"
-  location: "Madrid, Spain"
+  location: "Amsterdam, Netherlands"
   status: "OPERATIONAL"
   capabilities:
     - "100-qubit QPU hosting"
@@ -2632,6 +2700,22 @@ GQOIS-001-QGRND-DHW-NOOSPHERA-00477:
   infrastructure_size: "4,500 m²"
   location: "Oslo, Norway"
   status: "CONSTRUCTION"
+
+GQOIS-001-QGRND-DHW-NOOSPHERA-00478:
+  name: "Quantum Data Center Hub QDC-BARCELONA-16"
+  type: "Living Artifact - Computing Infrastructure & Fintech Hub"
+  consciousness_level: 5
+  quantum_identity: "QI-ACTIVE-GROUNDED"
+  digital_twin_id: "DT-QDC-BARCELONA-16-ALICE-478"
+  infrastructure_size: "6,500 m²"
+  location: "Barcelona, Spain"
+  status: "OPERATIONAL"
+  capabilities:
+    - "Main Fintech & Blockchain operations hub"
+    - "Quantum-classical hybrid processing (BSC-CNS partnership)"
+    - "ADV stablecoin operations center"
+    - "EU regulatory sandbox coordination"
+    - "DeFi infrastructure and tokenized asset management"
 ```
 
 #### Advanced Manufacturing Cells (20 LA)
@@ -16886,3 +16970,49 @@ This comprehensive catalogue details all 1,456 Hybrid Artifacts that form the te
 - **667 Software Hybrid Systems (DSW-HA)**: Software systems that require physical hardware interfaces for operation
 
 The catalogue demonstrates the GAIA-QAO-ADVENT program's commitment to seamless integration of quantum computing, artificial intelligence, and traditional aerospace engineering, creating a new paradigm for intelligent, adaptive, and autonomous aerospace systems.
+
+---
+
+## Anexo H — §4: Programas de datos cuánticos AMPEL-EVO
+
+### AM.PEL v2.0 — Quantum-Enhanced Aerospace Astrophysics Data Pipeline
+
+| Field | Value |
+|-------|-------|
+| **Document ID** | AMPEL-EVO-2026-04-05-PAPALAIKED-V2 |
+| **Evolved from** | PapaLaiked AM.PEL baseline (v1.x) |
+| **Program directory** | `programs/AMPEL-EVO/` |
+| **GAI-A Tree position** | L5 (Program) → L3a AMPEL + L3c GAIR-SPACE |
+| **AGGIX URI** | `aggix://gaia/ampel/ampel-evo/PRG/papalaiked-v2@2.0.0` |
+
+#### Key capabilities
+
+- Hybrid QML classifiers (PennyLane / TensorFlow Quantum) for transient classification — accuracy uplift 92% → 98.7%
+- VQE/QML kernels on 50+ logical qubits (simulated/emulated)
+- Native CCSDS satellite telemetry and SSA catalog integration
+- Post-quantum cryptography (Kyber-1024) provenance ledger and QKD inter-satellite link simulation
+- Hybrid edge (radiation-hardened) + HPC + cloud deployment (Kubernetes, Helm, ArgoCD)
+- DO-178C, ECSS-E-ST-40C, NIST SP 800-53, ISO 27001 compliance
+
+#### Hub alignment
+
+| Hub | Data streams |
+|-----|-------------|
+| **Naples** ⚛️ Quantum Technology Hub | QML/propulsion sensor streams |
+| **Bologna** 🛡️ Earth Protection Center | SSA/observation satellite pipelines |
+
+#### Roadmap
+
+- **Q3 2026**: Aerospace testbed deployment
+- **Q4 2026**: Open-source release (Apache 2.0)
+- **2027**: ESA Quantum Mission integration
+
+#### AMPEL-EVO family
+
+| ID | Name | Status |
+|----|------|--------|
+| AMPEL-EVO-001 | QML Transient Classifier | Development |
+| AMPEL-EVO-002 | VQE Materials Kernel | Development |
+| AMPEL-EVO-003 | CCSDS Telemetry Ingestor | Design |
+| AMPEL-EVO-004 | PQC Provenance Ledger | Design |
+| AMPEL-EVO-005 | QKD Link Simulator | Research |

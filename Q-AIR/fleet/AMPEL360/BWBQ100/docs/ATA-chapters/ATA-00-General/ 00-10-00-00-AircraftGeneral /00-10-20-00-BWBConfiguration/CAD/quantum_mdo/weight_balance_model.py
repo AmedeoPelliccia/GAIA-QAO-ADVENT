@@ -186,7 +186,7 @@ if __name__ == "__main__":
     try:
         bwb_q100_model = EnhancedWeightAndBalanceModel(wb_data)
         # 3. Generate and print the enhanced report
-        bwb_q100__model.generate_enhanced_report()
+        bwb_q100_model.generate_enhanced_report()
     except ValueError as e:
         print(f"\nERROR: Model instantiation failed due to a data integrity issue.")
         print(f"DETAILS: {e}")
