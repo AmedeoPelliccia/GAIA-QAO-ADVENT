@@ -146,6 +146,17 @@ class TestSingleQubitGates:
         sv = qc.get_statevector()
         assert np.isclose(sv[0], 1.0)
 
+    def test_non_integer_qubit_index_raises_gate_error(self):
+        qc = self._make_circuit(2)
+
+        # Float index
+        with pytest.raises(GateError):
+            qc.h(0.5)
+
+        # String index
+        with pytest.raises(GateError):
+            qc.h("0")
+
     def test_double_x_returns_to_zero(self):
         qc = self._make_circuit(1)
         qc.x(0)
