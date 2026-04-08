@@ -275,6 +275,12 @@ class TestMeasurement:
         with pytest.raises(MeasurementError):
             qc.measure([0, 1], [0])
 
+    def test_measure_list_qubits_and_clbits_passes(self):
+        qc = self._make_circuit(2)
+        qc.measure([0, 1], [0, 1])
+        counts = qc.simulate(shots=100)
+        assert counts == {"00": 100}
+
     def test_no_measurement_raises(self):
         qc = self._make_circuit(1)
         qc.h(0)
