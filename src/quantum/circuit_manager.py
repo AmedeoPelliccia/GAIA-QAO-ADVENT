@@ -322,15 +322,38 @@ class QuantumCircuit:
     def _apply_single_gate(
         self, gate_matrix: np.ndarray, qubit: int
     ) -> None:
-        """Apply a single-qubit *gate_matrix* to the statevector."""
+        """Apply a single-qubit *gate_matrix* to the statevector.
+
+        This is implemented as an in-place update that iterates over
+        pairs of amplitudes whose basis indices differ only at the
+        target qubit, avoiding construction of a full 2^n x 2^n matrix.
+        """
         n = self.num_qubits
-        # Build full operator via tensor product
-        ops = [_I] * n
-        ops[qubit] = gate_matrix
-        full = ops[0]
-        for op in ops[1:]:
-            full = np.kron(full, op)
-        self._statevector = full @ self._statevector
+        dim = 1 << n
+        state = self._statevector
+
+        # Qubit index 0 corresponds to the most significant bit, to match
+        # the bit ordering used elsewhere (see measurement code).
+        bit_pos = n - 1 - qubit
+        mask = 1 << bit_pos
+
+        g00 = gate_matrix[0, 0]
+        g01 = gate_matrix[0, 1]
+        g10 = gate_matrix[1, 0]
+        g11 = gate_matrix[1, 1]
+
+        # Iterate only over basis states where the target qubit is |0>,
+        # and pair them with the corresponding |1> state.
+        for i in range(dim):
+            if i & mask:
+                continue
+            j = i | mask
+
+            a0 = state[i]
+            a1 = state[j]
+
+            state[i] = g00 * a0 + g01 * a1
+            state[j] = g10 * a0 + g11 * a1
 
     def _apply_two_qubit_gate(
         self, gate_name: str, control: int, target: int
