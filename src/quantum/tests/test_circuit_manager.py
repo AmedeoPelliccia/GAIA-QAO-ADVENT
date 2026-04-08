@@ -307,7 +307,7 @@ class TestMeasurement:
 
 
 # ---------------------------------------------------------------
-# Compilation / optimisation tests
+# Compilation / optimization tests
 # ---------------------------------------------------------------
 
 class TestCompilation:

@@ -132,7 +132,7 @@ _TWO_QUBIT_GATES: Dict[str, np.ndarray] = {
     "cz": _CZ,
 }
 
-# Gate inverse relationships (for cancellation optimisation)
+# Gate inverse relationships (for cancellation optimization)
 _SELF_INVERSE_GATES = {"h", "x", "y", "z", "cx", "cz", "id"}
 
 
@@ -425,7 +425,8 @@ class QuantumCircuit:
         prob_sum = probabilities.sum()
         if prob_sum < 1e-10:
             raise CompilationError(
-                "Statevector has near-zero norm; circuit may be invalid"
+                "Statevector has near-zero norm after gate application; "
+                "all probability amplitudes collapsed to zero"
             )
         probabilities = probabilities / prob_sum
 
@@ -460,7 +461,7 @@ class QuantumCircuit:
     # ------------------------------------------------------------------
 
     def compile(self) -> "QuantumCircuit":
-        """Compile the circuit by applying optimisation passes.
+        """Compile the circuit by applying optimization passes.
 
         Currently implements:
         1. **Identity removal** – drops ``id`` gates.
@@ -473,11 +474,11 @@ class QuantumCircuit:
         QuantumCircuit
             A new, optimised circuit.
         """
-        optimised_ops = list(self._operations)
+        optimized_ops = list(self._operations)
 
         # Pass 1: Remove identity gates
-        optimised_ops = [
-            op for op in optimised_ops if op[0] != "id"
+        optimized_ops = [
+            op for op in optimized_ops if op[0] != "id"
         ]
 
         # Pass 2: Cancel adjacent self-inverse gates
@@ -486,47 +487,47 @@ class QuantumCircuit:
             changed = False
             new_ops: List[Tuple[str, Tuple[int, ...], dict]] = []
             i = 0
-            while i < len(optimised_ops):
+            while i < len(optimized_ops):
                 if (
-                    i + 1 < len(optimised_ops)
-                    and optimised_ops[i][0] == optimised_ops[i + 1][0]
-                    and optimised_ops[i][1] == optimised_ops[i + 1][1]
-                    and optimised_ops[i][0] in _SELF_INVERSE_GATES
-                    and optimised_ops[i][0] != "measure"
+                    i + 1 < len(optimized_ops)
+                    and optimized_ops[i][0] == optimized_ops[i + 1][0]
+                    and optimized_ops[i][1] == optimized_ops[i + 1][1]
+                    and optimized_ops[i][0] in _SELF_INVERSE_GATES
+                    and optimized_ops[i][0] != "measure"
                 ):
                     # Two identical self-inverse gates cancel out
                     i += 2
                     changed = True
                 else:
-                    new_ops.append(optimised_ops[i])
+                    new_ops.append(optimized_ops[i])
                     i += 1
-            optimised_ops = new_ops
+            optimized_ops = new_ops
 
         # Pass 3: H-X-H → Z fusion
         new_ops = []
         i = 0
-        while i < len(optimised_ops):
+        while i < len(optimized_ops):
             if (
-                i + 2 < len(optimised_ops)
-                and optimised_ops[i][0] == "h"
-                and optimised_ops[i + 1][0] == "x"
-                and optimised_ops[i + 2][0] == "h"
-                and optimised_ops[i][1] == optimised_ops[i + 1][1]
-                and optimised_ops[i][1] == optimised_ops[i + 2][1]
+                i + 2 < len(optimized_ops)
+                and optimized_ops[i][0] == "h"
+                and optimized_ops[i + 1][0] == "x"
+                and optimized_ops[i + 2][0] == "h"
+                and optimized_ops[i][1] == optimized_ops[i + 1][1]
+                and optimized_ops[i][1] == optimized_ops[i + 2][1]
             ):
-                new_ops.append(("z", optimised_ops[i][1], {}))
+                new_ops.append(("z", optimized_ops[i][1], {}))
                 i += 3
             else:
-                new_ops.append(optimised_ops[i])
+                new_ops.append(optimized_ops[i])
                 i += 1
-        optimised_ops = new_ops
+        optimized_ops = new_ops
 
         # Build the new circuit
         new_circuit = QuantumCircuit(
             QuantumRegister(self.num_qubits, self.qreg.name),
             ClassicalRegister(self.num_clbits, self.creg.name),
         )
-        new_circuit._operations = optimised_ops
+        new_circuit._operations = optimized_ops
         new_circuit._state_dirty = True
         return new_circuit
 
