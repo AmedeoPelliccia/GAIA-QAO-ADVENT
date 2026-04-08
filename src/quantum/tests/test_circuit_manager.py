@@ -292,6 +292,11 @@ class TestMeasurement:
         with pytest.raises(MeasurementError):
             qc.measure(0, 5)
 
+    def test_negative_clbit_raises(self):
+        qc = self._make_circuit(2)
+        with pytest.raises(MeasurementError):
+            qc.measure(0, -1)
+
     def test_bell_state_measurement(self):
         """Bell state should produce only 00 or 11."""
         qc = self._make_circuit(2)
